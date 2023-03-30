@@ -36,6 +36,11 @@ class ClassCompoMenu extends Component {
               life Cycle
             </Link>
           </li>
+          <li className="mt-2 ">
+            <Link to="loaderlifecycle" className="h4  text-capitalize ">
+              loader life Cycle
+            </Link>
+          </li>
         </ul>
         <Outlet></Outlet>
       </>

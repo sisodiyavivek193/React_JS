@@ -3,7 +3,7 @@ import Header from "./CommonCompo/Header";
 import Home from "./Home.jsx";
 import Example from "./Example.jsx";
 import React, { Suspense } from "react";
-//   import "./index.css";
+  // import "./index.css";
 
 const ClassCompoRouter = React.lazy(() => {
   return import("./Component/ClassCompo/ClassCompoRouter");

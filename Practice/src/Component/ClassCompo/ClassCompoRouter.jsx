@@ -7,7 +7,7 @@ import ClassCompoState from "./03ClassCompoState.jsx";
 import ClassCompojsx from "./04ClassCompojsx.jsx";
 import ClassCompoProps from "./05ClassCompoProps.jsx";
 import LifeCycle from "./07LifeCycle.jsx";
-
+import LoaderLifeCycle from "./08LoaderLifeCycle.jsx";
 
 export default class ClassCompoRouter extends Component {
   render() {
@@ -24,6 +24,7 @@ export default class ClassCompoRouter extends Component {
             <Route path="/classcompojsx" element={<ClassCompojsx />} />
             <Route path="/classcompoprops" element={<ClassCompoProps />} />
             <Route path="/lifecycle" element={<LifeCycle />} />
+            <Route path="/loaderlifecycle" element={<LoaderLifeCycle />} />
           </Route>
         </Routes>
       </>

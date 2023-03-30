@@ -19,7 +19,12 @@ class CardCustomStructure extends Component {
             rippleTag="div"
             className="bg-image hover-overlay"
           >
-            <MDBCardImage src={this.props.imgurl} fluid alt="..." />
+            <MDBCardImage
+              src={this.props.imgurl}
+              style={{ height: "150px", objectFit: "fill" }}
+              fluid
+              alt="..."
+            />
             <a>
               <div
                 className="mask"
@@ -29,9 +34,8 @@ class CardCustomStructure extends Component {
           </MDBRipple>
           <MDBCardBody>
             <MDBCardTitle>{this.props.tittle}</MDBCardTitle>
-            <MDBCardText>
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
+            <MDBCardText >
+            {this.props.paragraph}
             </MDBCardText>
             <MDBBtn href="#">Button</MDBBtn>
           </MDBCardBody>
