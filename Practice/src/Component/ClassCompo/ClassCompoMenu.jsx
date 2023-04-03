@@ -46,6 +46,11 @@ class ClassCompoMenu extends Component {
               Canditional Rendering
             </Link>
           </li>
+          <li className="mt-2 ">
+            <Link to="Listkeysmap" className="h4  text-capitalize ">
+              List Keys Map
+            </Link>
+          </li>
         </ul>
         <Outlet></Outlet>
       </>

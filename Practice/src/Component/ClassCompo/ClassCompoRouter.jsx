@@ -9,6 +9,7 @@ import ClassCompoProps from "./05ClassCompoProps.jsx";
 import LifeCycle from "./07LifeCycle.jsx";
 import LoaderLifeCycle from "./08LoaderLifeCycle.jsx";
 import CanditionalRendering from "./10CanditionalRendering.jsx";
+import ListKeysMap from "./11ListKeysMap.jsx";
 
 export default class ClassCompoRouter extends Component {
   render() {
@@ -30,6 +31,7 @@ export default class ClassCompoRouter extends Component {
               path="/Canditionalrendering"
               element={<CanditionalRendering />}
             />
+            <Route path="/Listkeysmap" element={<ListKeysMap />} />
           </Route>
         </Routes>
       </>
