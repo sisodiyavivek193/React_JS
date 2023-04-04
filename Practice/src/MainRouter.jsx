@@ -1,9 +1,11 @@
 import { createBrowserRouter } from "react-router-dom";
-import Header from "./CommonCompo/Header";
+// import Header from "./CommonCompo/Header";
+import Header from "./CommonCompo/NewHeader";
 import Home from "./Home.jsx";
 import Example from "./Example.jsx";
+import About from "./About.jsx";
 import React, { Suspense } from "react";
-  // import "./index.css";
+// import "./index.css";
 
 const ClassCompoRouter = React.lazy(() => {
   return import("./Component/ClassCompo/ClassCompoRouter");
@@ -16,6 +18,15 @@ const MainRouter = createBrowserRouter([
       <>
         <Header />
         <Home />
+      </>
+    ),
+  },
+  {
+    path: "/about",
+    element: (
+      <>
+        <Header />
+        <About />
       </>
     ),
   },
