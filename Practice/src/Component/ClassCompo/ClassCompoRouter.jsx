@@ -11,6 +11,9 @@ import LoaderLifeCycle from "./08LoaderLifeCycle.jsx";
 import CanditionalRendering from "./10CanditionalRendering.jsx";
 import ListKeysMap from "./11ListKeysMap.jsx";
 import ListKeysMapExample from "./12ListKeysMapExample.jsx";
+import DynamicSubMenu from "./13DynamicSubMenu";
+import ClassCompoSpreadRest from "./14ClassCompoSpreadRest.jsx";
+import ClassCompoControlledCompo from "./15ClassCompoControlledCompo.jsx";
 
 export default class ClassCompoRouter extends Component {
   render() {
@@ -34,6 +37,9 @@ export default class ClassCompoRouter extends Component {
             />
             <Route path="/Listkeysmap" element={<ListKeysMap />} />
             <Route path="/ListKeysmapexample" element={<ListKeysMapExample />} />
+            <Route path="/dynamicsubmenu" element={<DynamicSubMenu />} />
+            <Route path="/classcompospreadrest" element={<ClassCompoSpreadRest />} />
+            <Route path="/classcompocontrolledcompo" element={<ClassCompoControlledCompo />} />
           </Route>
         </Routes>
       </>

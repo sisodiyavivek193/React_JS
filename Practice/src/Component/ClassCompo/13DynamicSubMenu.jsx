@@ -15,17 +15,18 @@ import {
   MDBDropdownItem,
   MDBCollapse,
 } from "mdb-react-ui-kit";
+import { Link } from "react-router-dom";
 
 class DynamicSubMenu extends Component {
   render() {
     const menuItems = [
       {
         title: "Home",
-        url: "/",
+        url: `/`,
       },
       {
         title: "about",
-        url: "/about",
+        url: `/about`,
       },
       {
         title: "Services",
@@ -65,24 +66,36 @@ class DynamicSubMenu extends Component {
         ],
       },
     ];
-    const MenuData = menuItems.map((data) => {
+    const MenuData = menuItems.map((data, index) => {
       console.log(data.submenu);
+
+      // jyare submenu madse tyare
+
       if (data.submenu != undefined) {
-        var submenudata = data.submenu.map((submenu) => {
+        var submenudata = data.submenu.map((submenu, index) => {
           console.log("called inner loop", submenu);
-          return <MDBDropdownItem link>{submenu.title}</MDBDropdownItem>;
+          return (
+            <MDBDropdownItem key={index} link>
+              {submenu.title}
+            </MDBDropdownItem>
+          );
         });
       }
 
+      // jyare submenu ny madse tyare
+
       if (data.submenu == null) {
         return (
-          <MDBNavbarItem>
-            <MDBNavbarLink>{data.title}</MDBNavbarLink>
+          <MDBNavbarItem key={index}>
+            {/* <MDBNavbarLink> */}
+            <Link className="nav-link" to={data.url}>{data.title}</Link>
+            {/* </MDBNavbarLink> */}
           </MDBNavbarItem>
         );
+        // jyare submenu  madse tyare
       } else {
         return (
-          <MDBNavbarItem>
+          <MDBNavbarItem key={index}>
             <MDBDropdown>
               <MDBDropdownToggle tag="a" className="nav-link" role="button">
                 {data.title}

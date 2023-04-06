@@ -53,7 +53,23 @@ class ClassCompoMenu extends Component {
           </li>
           <li className="mt-2 ">
             <Link to="ListKeysmapexample" className="h4  text-capitalize ">
-            ListKeys Map Example
+              ListKeys Map Example
+            </Link>
+          </li>
+
+          <li className="mt-2 ">
+            <Link to="dynamicsubmenu" className="h4  text-capitalize ">
+              Dynamic Sub Menu
+            </Link>
+          </li>
+          <li className="mt-2 ">
+            <Link to="classcompospreadrest" className="h4  text-capitalize ">
+            Class Compo Spread vs Rest
+            </Link>
+          </li>
+          <li className="mt-2 ">
+            <Link to="classcompocontrolledcompo" className="h4  text-capitalize ">
+            Class Compo Controlled Compo
             </Link>
           </li>
         </ul>

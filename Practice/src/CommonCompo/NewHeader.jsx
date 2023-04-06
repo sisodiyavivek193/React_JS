@@ -37,7 +37,7 @@ class NewHeader extends Component {
     });
     return (
       <>
-        <MDBNavbar expand="lg" light bgColor="light">
+        <MDBNavbar expand="lg" light bgColor="light" className="sticky-top">
           <MDBContainer fluid>
             <MDBNavbarBrand className="ms-5" href="#">
               Nandan
