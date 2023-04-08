@@ -64,12 +64,23 @@ class ClassCompoMenu extends Component {
           </li>
           <li className="mt-2 ">
             <Link to="classcompospreadrest" className="h4  text-capitalize ">
-            Class Compo Spread vs Rest
+              Class Compo Spread vs Rest
             </Link>
           </li>
           <li className="mt-2 ">
-            <Link to="classcompocontrolledcompo" className="h4  text-capitalize ">
-            Class Compo Controlled Compo
+            <Link
+              to="classcompocontrolledcompo"
+              className="h4  text-capitalize "
+            >
+              Class Compo Controlled Compo
+            </Link>
+          </li>
+          <li className="mt-2 ">
+            <Link
+              to="classcompocontrolledcompoobject"
+              className="h4  text-capitalize "
+            >
+              Class Compo Controlled Compo Object
             </Link>
           </li>
         </ul>
