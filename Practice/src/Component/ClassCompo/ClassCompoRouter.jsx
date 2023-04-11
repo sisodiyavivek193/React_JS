@@ -15,6 +15,9 @@ import DynamicSubMenu from "./13DynamicSubMenu";
 import ClassCompoSpreadRest from "./14ClassCompoSpreadRest.jsx";
 import ClassCompoControlledCompo from "./15ClassCompoControlledCompo.jsx";
 import ClassCompoControlledCompoObject from "./15.1ClassCompoControlledCompoObject.jsx";
+import ClassCompoUnControlledCompo from "./16ClassCompoUnControlledCompo.jsx";
+import ClassCompoCompositionVsInheritance from "./17ClassCompoCompositionVsInheritance.jsx";
+import StateLiftingMain from "./19StateLiftingMain.jsx";
 
 export default class ClassCompoRouter extends Component {
   render() {
@@ -42,6 +45,9 @@ export default class ClassCompoRouter extends Component {
             <Route path="/classcompospreadrest" element={<ClassCompoSpreadRest />} />
             <Route path="/classcompocontrolledcompo" element={<ClassCompoControlledCompo />} />
             <Route path="/classcompocontrolledcompoobject" element={<ClassCompoControlledCompoObject />} />
+            <Route path="/classcompouncontrolledcompo" element={<ClassCompoUnControlledCompo />} />
+            <Route path="/classcompocompositionvsinheritance" element={<ClassCompoCompositionVsInheritance />} />
+            <Route path="/stateliftingmain" element={<StateLiftingMain />} />
           </Route>
         </Routes>
       </>

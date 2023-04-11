@@ -83,6 +83,30 @@ class ClassCompoMenu extends Component {
               Class Compo Controlled Compo Object
             </Link>
           </li>
+          <li className="mt-2 ">
+            <Link
+              to="classcompouncontrolledcompo"
+              className="h4  text-capitalize "
+            >
+              Class Compo Uncontrolled Compo
+            </Link>
+          </li>
+          <li className="mt-2 ">
+            <Link
+              to="classcompocompositionvsinheritance"
+              className="h4  text-capitalize "
+            >
+              Class Compo Composition Vs Inheritance
+            </Link>
+          </li>
+          <li className="mt-2 ">
+            <Link
+              to="stateliftingmain"
+              className="h4  text-capitalize "
+            >
+              Class Compo StateLiftingMain
+            </Link>
+          </li>
         </ul>
         <Outlet></Outlet>
       </>
