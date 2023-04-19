@@ -11,6 +11,11 @@ const ClassCompoRouter = React.lazy(() => {
   return import("./Component/ClassCompo/ClassCompoRouter");
 });
 
+
+const FunctionCompoRouter = React.lazy(() => {
+  return import("./Component/FunctionCompo/FunctionCompoRouter");
+});
+
 const MainRouter = createBrowserRouter([
   {
     path: "/",
@@ -62,7 +67,15 @@ const MainRouter = createBrowserRouter([
           </Suspense>
         ),
       },
+
+      {
+        path: "Functioncomporouter/*",
+        element: <Suspense fallback={<h1>loagin..........</h1>}><FunctionCompoRouter /></Suspense>
+      }
     ],
+
+
+
   },
 ]);
 

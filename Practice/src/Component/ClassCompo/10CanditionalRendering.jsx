@@ -11,13 +11,13 @@ class CanditionalRendering extends Component {
   changthemegreen = () => {
     this.setState({ theme: "green" });
   };
-  toggletheme = () => {
-    if (this.state.theme == "dark") {
-      this.setState({ theme: "green" });
-    } else {
-      this.setState({ theme: "dark" });
-    }
-  };
+  // toggletheme = () => {
+  //   if (this.state.theme == "dark") {
+  //     this.setState({ theme: "green" });
+  //   } else {
+  //     this.setState({ theme: "dark" });
+  //   }
+  // };
   render() {
     let ThemeDarkData = "";
     if (this.state.theme == "dark") {
@@ -41,11 +41,10 @@ class CanditionalRendering extends Component {
         <div
           // className="dark"
           style={
-            this.state.theme == "dark"
-              ? { backgroundColor: "black", color: "yellow" }
+            this.state.theme == "dark" ? { backgroundColor: "black", color: "yellow" }
               : { backgroundColor: "green", color: "black" }
           }
-          //   style={{ backgroundColor: "black", color: "yellow" }}
+        //   style={{ backgroundColor: "black", color: "yellow" }}
         >
           this will change
         </div>

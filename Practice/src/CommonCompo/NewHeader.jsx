@@ -40,7 +40,7 @@ class NewHeader extends Component {
         <MDBNavbar expand="lg" light bgColor="light" className="sticky-top">
           <MDBContainer fluid>
             <MDBNavbarBrand className="ms-5" href="#">
-              Nandan
+              Logo
             </MDBNavbarBrand>
             {/* <MDBNavbarToggler
                             aria-controls='navbarSupportedContent'

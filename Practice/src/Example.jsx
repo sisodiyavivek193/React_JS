@@ -12,19 +12,19 @@ class Example extends Component {
             </div>
           </div>
           <div className="row text-center">
-            <div className="col-6">
+            <div className="col-lg-6">
               <Link to="classcomporouter" className="display-6 ">
                 Class Component
               </Link>
             </div>
-            <div className="col-6">
-              <Link to="#" className="display-6 ">
+            <div className="col-lg-6">
+              <Link to="Functioncomporouter" className="display-6 ">
                 Function Component
               </Link>
             </div>
           </div>
           <div className="row ">
-            <div className="col-12  ">
+            <div className="col-12">
               <Outlet></Outlet>
             </div>
           </div>
