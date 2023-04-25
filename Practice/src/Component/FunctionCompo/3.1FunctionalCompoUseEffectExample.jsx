@@ -1,3 +1,4 @@
+import { MDBBtn, MDBInput } from 'mdb-react-ui-kit';
 import React, { useEffect, useState } from 'react';
 
 const FunctionalCompoUseEffectExample = () => {
@@ -32,15 +33,25 @@ const FunctionalCompoUseEffectExample = () => {
         <>
 
 
-            {JSON.stringify(formdata1)}
-            {JSON.stringify(formdata)}
-            <form action="">
-                {/* value={formdata.inputdata.fname ? formdata.inputdata.fname : ""} */}
-                <input type="text" onChange={inpitdada} name="fname" id="title" value={formdata.inputdata.fname ? formdata.inputdata.fname : ""} />
-                <input type="password" onChange={inpitdada} name='password' value={formdata.inputdata.password ? formdata.inputdata.password : ""} />
-                <input type="submit" onClick={save} value="Submit" />
 
-            </form>
+            <div className="row">
+                <div className="col-lg-6 ">
+                    {JSON.stringify(formdata)}
+                    <form action="">
+                        {/* value={formdata.inputdata.fname ? formdata.inputdata.fname : ""} */}
+                        <MDBInput type="text" label="Firstname" className='mt-3 d-block' size='lg' onChange={inpitdada} name="fname" id="title" value={formdata.inputdata.fname ? formdata.inputdata.fname : ""} />
+                        <MDBInput type="password" label="Password" size='lg' className='mt-3 d-block' onChange={inpitdada} name='password' value={formdata.inputdata.password ? formdata.inputdata.password : ""} />
+                        <MDBBtn type="submit" onClick={save} value="Submit" className='mt-3'>Save</MDBBtn>
+
+                    </form>
+                </div>
+                <div className="col-lg-6">
+                    {JSON.stringify(formdata1)}
+
+                </div>
+            </div>
+
+
         </>
     );
 };

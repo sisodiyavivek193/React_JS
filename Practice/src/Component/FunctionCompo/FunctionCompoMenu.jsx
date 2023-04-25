@@ -27,6 +27,16 @@ const FunctionCompoMenu = () => {
                                 Function Compo Use Effect Example
                             </Link>
                         </li>
+                        <li className="mt-2 ">
+                            <Link to="sirfunctionalcompousecontext" className="h4  text-capitalize ">
+                                sirfunctionalcompousecontext
+                            </Link>
+                        </li>
+                        <li className="mt-2 ">
+                            <Link to="usecontext" className="h4  text-capitalize ">
+                                Function Compo Use Context
+                            </Link>
+                        </li>
                     </ul>
                 </div>
             </div>

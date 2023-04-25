@@ -37,6 +37,10 @@ class DynamicSubMenu extends Component {
             url: "web-design",
           },
           {
+            title: "web design",
+            url: "web-design",
+          },
+          {
             title: "web development",
             url: "web-dev",
           },
