@@ -1,5 +1,6 @@
-// --------------Index---------------------
 import { createContext, useState } from 'react';
+
+
 
 const ThemeContext = createContext();
 
@@ -19,7 +20,6 @@ const Panel = ({ children }) => {
                             setTheme(e.target.checked ? 'dark' : 'light')
                         }}
                     />
-
                     Use dark mode
                 </label>
             </ThemeContext.Provider>

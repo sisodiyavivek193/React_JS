@@ -23,15 +23,16 @@ const FunctionCompoMenu = () => {
                             </Link>
                         </li>
                         <li className="mt-2 ">
+                            <Link to="functionalcompouseecallback" className="h4  text-capitalize ">
+                                Function Compo Use Callback
+                            </Link>
+                        </li>
+                        <li className="mt-2 ">
                             <Link to="functionalcompoUseeffectexample" className="h4  text-capitalize ">
                                 Function Compo Use Effect Example
                             </Link>
                         </li>
-                        <li className="mt-2 ">
-                            <Link to="sirfunctionalcompousecontext" className="h4  text-capitalize ">
-                                sirfunctionalcompousecontext
-                            </Link>
-                        </li>
+                      
                         <li className="mt-2 ">
                             <Link to="usecontext" className="h4  text-capitalize ">
                                 Function Compo Use Context
