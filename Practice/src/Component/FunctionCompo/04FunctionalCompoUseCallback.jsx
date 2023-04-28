@@ -31,7 +31,11 @@ const FunctionalCompoUseCallback = () => {
     funccount.add(incrementNumber);
     console.log(funccount.size);
     return (
+
+
         <div className='mb-5'>
+            <p>The React useCallback Hook returns a memoized callback function.</p>
+            <h4>The useCallback Hook only runs when one of its dependencies update.</h4>
             Count: {count} <br />
             Number: {number} <br />
             <button onClick={incrementCounter}>Increase counter</button>

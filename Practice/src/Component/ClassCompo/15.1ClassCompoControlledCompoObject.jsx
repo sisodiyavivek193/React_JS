@@ -32,10 +32,6 @@ class ClassCompoControlledCompoObject extends Component {
                     <input type="submit" value="submit" onClick={this.sumbit} /><br />
 
                 </form>
-
-
-
-                
             </div>
         );
     }
