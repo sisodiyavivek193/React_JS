@@ -6,6 +6,7 @@ import FunctionalCompoState from "./02FunctionalCompoState.jsx";
 import FunctionalCompoUseEffect from "./03FunctionalCompoUseEffect.jsx";
 import FunctionalCompoUseCallback from "./04FunctionalCompoUseCallback.jsx";
 import FunctionalCompoUseEffectExample from "./3.1FunctionalCompoUseEffectExample.jsx";
+import FunctionalCompoUseMemo from "./05FunctionalCompoUseMemo.jsx";
 
 import UseContext from "./07UseContext.jsx/FunctionalCompoUseContext.jsx";
 
@@ -22,6 +23,7 @@ const FunctionCompoRouter = () => {
                     <Route path="functionalcompouseecallback" element={<FunctionalCompoUseCallback />} />
                     <Route path="functionalcompoUseeffectexample" element={<FunctionalCompoUseEffectExample />} />
                     <Route path="usecontext" element={<UseContext />} />
+                    <Route path="functionalcompousememo" element={<FunctionalCompoUseMemo />} />
 
                 </Route>
             </Routes>

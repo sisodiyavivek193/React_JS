@@ -38,6 +38,11 @@ const FunctionCompoMenu = () => {
                                 Function Compo Use Context
                             </Link>
                         </li>
+                        <li className="mt-2 ">
+                            <Link to="functionalcompousememo" className="h4  text-capitalize ">
+                                Function Compo Use Memo
+                            </Link>
+                        </li>
                     </ul>
                 </div>
             </div>
