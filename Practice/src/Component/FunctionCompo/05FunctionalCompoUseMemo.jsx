@@ -36,5 +36,5 @@ const FunctionalCompoUseMemo = () => {
             </>
         );
     };
-
-    export default FunctionalCompoUseMemo;
+};
+export default FunctionalCompoUseMemo;
