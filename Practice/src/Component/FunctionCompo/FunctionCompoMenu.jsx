@@ -28,21 +28,22 @@ const FunctionCompoMenu = () => {
                             </Link>
                         </li>
                         <li className="mt-2 ">
+                            <Link to="functionalcompousememo" className="h4  text-capitalize ">
+                                Function Compo Use Memo
+                            </Link>
+                        </li>
+                        <li className="mt-2 ">
                             <Link to="functionalcompoUseeffectexample" className="h4  text-capitalize ">
                                 Function Compo Use Effect Example
                             </Link>
                         </li>
-                      
+
                         <li className="mt-2 ">
                             <Link to="usecontext" className="h4  text-capitalize ">
                                 Function Compo Use Context
                             </Link>
                         </li>
-                        <li className="mt-2 ">
-                            <Link to="functionalcompousememo" className="h4  text-capitalize ">
-                                Function Compo Use Memo
-                            </Link>
-                        </li>
+
                     </ul>
                 </div>
             </div>

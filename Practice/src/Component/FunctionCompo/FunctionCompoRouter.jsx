@@ -5,8 +5,8 @@ import WelcomeToFunctionalCompo from "./01WelcomeToFunctionalCompo.jsx";
 import FunctionalCompoState from "./02FunctionalCompoState.jsx";
 import FunctionalCompoUseEffect from "./03FunctionalCompoUseEffect.jsx";
 import FunctionalCompoUseCallback from "./04FunctionalCompoUseCallback.jsx";
-import FunctionalCompoUseEffectExample from "./3.1FunctionalCompoUseEffectExample.jsx";
 import FunctionalCompoUseMemo from "./05FunctionalCompoUseMemo.jsx";
+import FunctionalCompoUseEffectExample from "./3.1FunctionalCompoUseEffectExample.jsx";
 
 import UseContext from "./07UseContext.jsx/FunctionalCompoUseContext.jsx";
 
