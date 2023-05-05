@@ -32,6 +32,7 @@ const FunctionCompoMenu = () => {
                                 Function Compo Use Memo
                             </Link>
                         </li>
+
                         <li className="mt-2 ">
                             <Link to="functionalcompoUseeffectexample" className="h4  text-capitalize ">
                                 Function Compo Use Effect Example
@@ -43,7 +44,13 @@ const FunctionCompoMenu = () => {
                                 Function Compo Use Context
                             </Link>
                         </li>
-
+                      
+                        <li className="mt-2 ">
+                            <Link to="functionalcompousereducer" className="h4  text-capitalize ">
+                                Function Compo Use Reducer
+                            </Link>
+                        </li>
+                      
                     </ul>
                 </div>
             </div>
