@@ -1,3 +1,4 @@
+import { MDBBtn } from 'mdb-react-ui-kit';
 import { useRef, React } from 'react';
 
 const FunctionalCompoUseRef = () => {
@@ -11,16 +12,14 @@ const FunctionalCompoUseRef = () => {
     };
     return (
         <>
-            <div>
-                <button onClick={onClickHandler}>
-                    ACTION
-                </button>
-            </div>
             <label>
                 Click on the action button to
                 focus and populate the text.
             </label><br />
-            <textarea ref={focusPoint} />
+            <textarea ref={focusPoint} /><br />
+            <MDBBtn onClick={onClickHandler}>
+                Submit
+            </MDBBtn>
         </>
     );
 };
