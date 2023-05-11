@@ -42,7 +42,7 @@ const MainRouter = createBrowserRouter([
     path: "/loginpage",
     element: (
       <>
-        <Header />
+
         <LoginPage />
       </>
     ),
