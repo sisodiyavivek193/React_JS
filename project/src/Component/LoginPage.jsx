@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import CustomHook from '../Hooks/customHook';
 
 
@@ -7,6 +7,40 @@ const LoginPage = () => {
     const { inputchange, inputdata, error } = CustomHook({}, {});
     // console.log(handleChange);
     console.log(inputdata);
+
+
+    useEffect(() => {
+        const handleBlur = (event) => {
+            const { name, value } = event.target;
+            const errorMessage = name + ' required';
+            const spanElement = document.createElement('span');
+            spanElement.style.textTransform = 'capitalize';
+            spanElement.innerHTML = errorMessage;
+
+            if (value === '') {
+                if (event.target.nextSibling.nodeName !== 'SPAN') {
+                    event.target.insertAdjacentElement('afterend', spanElement);
+                }
+            } else {
+                if (event.target.nextSibling.nodeName === 'SPAN') {
+                    event.target.nextSibling.remove();
+                }
+            }
+        };
+
+        const elements = document.querySelectorAll('.thisrequired');
+        elements.forEach((element) => {
+            element.addEventListener('blur', handleBlur);
+        });
+
+        return () => {
+            elements.forEach((element) => {
+                element.removeEventListener('blur', handleBlur);
+            });
+        };
+    }, []);
+
+
 
     const [ActiveClass, setActiveClass] = useState(false);
     const Btnclick = (e) => {
@@ -34,14 +68,14 @@ const LoginPage = () => {
                                     <label className="label">
                                         Username
                                     </label>
-                                    <input onBlur={inputchange} type="text" name='username' className="input" />
-                                    {error.usernameerror ? <span>{error.usernameerror}</span> : <></>}
+                                    <input onBlur={inputchange} type="text" name='username' className="thisrequired" />
+                                    {error.usernameerror ? <span>{error.usernameerror}</span> :null}
                                 </div>
                                 <div className="group">
                                     <label className="label">
                                         Password
                                     </label>
-                                    <input onBlur={inputchange} type="password" name='password' className="input" />
+                                    <input onBlur={inputchange} type="password" name='password' className="thisrequired" />
                                 </div>
                                 {/* <div className="group">
                                     <input id="check" type="checkbox" className="check" />
@@ -50,7 +84,7 @@ const LoginPage = () => {
                                     </label>
                                 </div> */}
                                 <div className="group">
-                                    <input type="submit" className="button" value="Sign In" />
+                                    <input type="submit" value="Sign In" />
                                 </div>
                                 <div className="hr"></div>
                                 <div className="foot-lnk">
@@ -62,25 +96,25 @@ const LoginPage = () => {
                                     <label htmlFor="user" className="label">
                                         Username
                                     </label>
-                                    <input type="text" className="input" />
+                                    <input type="text" className="thisrequired" />
                                 </div>
                                 <div className="group">
                                     <label htmlFor="pass" className="label">
                                         Password
                                     </label>
-                                    <input type="password" className="input" data-type="password" />
+                                    <input type="password" className="thisrequired" data-type="password" />
                                 </div>
                                 <div className="group">
                                     <label htmlFor="pass" className="label">
                                         Repeat Password
                                     </label>
-                                    <input type="password" className="input" data-type="password" />
+                                    <input type="password" className="thisrequired" data-type="password" />
                                 </div>
                                 <div className="group">
                                     <label htmlFor="pass" className="label">
                                         Email Address
                                     </label>
-                                    <input type="text" className="input" />
+                                    <input type="text" className="thisrequired" />
                                 </div>
                                 <div className="group">
                                     <input type="submit" className="button" value="Sign Up" />
