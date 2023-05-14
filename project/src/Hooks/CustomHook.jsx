@@ -1,33 +1,59 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
-const CustomHook = (inputdata, inputerror) => {
-    const [input, setInput] = useState(inputdata)
-    const [error, setError] = useState(inputerror)
-    const inputchange = (e) => {
-        // const SpanId =
-        console.log("called");
-        setInput((input) => ({ ...input, [e.target.name]: e.target.value }))
-        if (e.target.name == "username") {
-            if (e.target.value == "") {
-                setError({ ...error, "usernameerror": "username is requrid" })
+const CustomHook = () => {
 
-            } else {
-                setError({ ...error, "usernameerror": "" })
 
+
+
+
+    useEffect(() => {
+        const Creates = document.querySelectorAll(".thisrequired");
+
+        Creates.forEach((element) => {
+            element.addEventListener('Blur', inputchange);
+
+        })
+    }, []);
+
+
+    const inputchange = (event) => {
+
+        const element = event.target
+        console.log(element);
+
+        console.log(event);
+
+        const val = element.getAttribute("name");
+
+
+        const error = val + "required";
+
+        const text = document.createElement("span");
+
+        const validation = element.nextsibling;
+
+
+        if (element.value === "") {
+            if (!validation || validation.nodename !== "span") {
+                element.insertAdjacentElement("afterend", text);
+            }
+
+
+        } else {
+            if (validation && validation.nodename !== "span") {
+                validation.remove();
             }
 
         }
 
+
     }
-    console.log(input);
 
     return {
         inputchange,
-        input,
-        error
 
     }
+    console.log(inputchange);
 
-};
-
+}
 export default CustomHook;
