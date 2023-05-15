@@ -10,7 +10,7 @@ const CustomHook = () => {
         const Creates = document.querySelectorAll(".thisrequired");
 
         Creates.forEach((element) => {
-            element.addEventListener('Blur', inputchange);
+            element.addEventListener('blur', inputchange);
 
         })
     }, []);
@@ -18,7 +18,7 @@ const CustomHook = () => {
 
     const inputchange = (event) => {
 
-        const element = event.target
+        const element = event.target;
         console.log(element);
 
         console.log(event);
@@ -28,19 +28,21 @@ const CustomHook = () => {
 
         const error = val + "required";
 
-        const text = document.createElement("span");
+        const text = document.createElement("SPAN");
+        text.innerHTML = error;
 
         const validation = element.nextsibling;
 
 
         if (element.value === "") {
-            if (!validation || validation.nodename !== "span") {
+            if (!validation || validation.nodename !== "SPAN") {
                 element.insertAdjacentElement("afterend", text);
             }
+            console.log("colld");
 
 
         } else {
-            if (validation && validation.nodename !== "span") {
+            if (validation && validation.nodename !== "SPAN") {
                 validation.remove();
             }
 
