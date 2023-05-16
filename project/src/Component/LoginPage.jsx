@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import CustomHook from '../Hooks/customHook';
 
-
 const LoginPage = () => {
 
 
@@ -27,7 +26,7 @@ const LoginPage = () => {
                         <label htmlFor="tab-1" className="tab">
                             Sign In
                         </label>
-                        <input id="tab-2" type="radio" name="tab" className="sign-up" />
+                        <input id="tab-2" type="radio" name="tab" className="sign-up input" />
                         <label htmlFor="tab-2" className="tab">
                             Sign Up
                         </label>
@@ -38,14 +37,14 @@ const LoginPage = () => {
                                     <label className="label">
                                         Username
                                     </label>
-                                    <input type="text" name='username' className="thisrequired" />
+                                    <input type="text" name='username' className="thisrequired input" />
                                     {/* {error.usernameerror ? <span>{error.usernameerror}</span> : null} */}
                                 </div>
                                 <div className="group">
                                     <label className="label">
                                         Password
                                     </label>
-                                    <input type="password" name='password' className="thisrequired" />
+                                    <input type="password" name='password' className="thisrequired input" />
                                 </div>
                                 {/* <div className="group">
                                     <input id="check" type="checkbox" className="check" />
@@ -54,7 +53,7 @@ const LoginPage = () => {
                                     </label>
                                 </div> */}
                                 <div className="group">
-                                    <input type="submit" value="Sign In" />
+                                    <input type="submit" className='button' value="Sign In" />
                                 </div>
                                 <div className="hr"></div>
                                 <div className="foot-lnk">
@@ -66,26 +65,27 @@ const LoginPage = () => {
                                     <label htmlFor="user" className="label">
                                         Username
                                     </label>
-                                    <input type="text" className="thisrequired" />
-                                </div>
-                                <div className="group">
-                                    <label htmlFor="pass" className="label">
-                                        Password
-                                    </label>
-                                    <input type="password" className="thisrequired" data-type="password" />
-                                </div>
-                                <div className="group">
-                                    <label htmlFor="pass" className="label">
-                                        Repeat Password
-                                    </label>
-                                    <input type="password" className="thisrequired" data-type="password" />
+                                    <input type="text" name='Username' className="thisrequired input" />
                                 </div>
                                 <div className="group">
                                     <label htmlFor="pass" className="label">
                                         Email Address
                                     </label>
-                                    <input type="text" className="thisrequired" />
+                                    <input type="text" name='Email' className="thisrequired input" />
                                 </div>
+                                <div className="group">
+                                    <label htmlFor="pass" className="label">
+                                        Password
+                                    </label>
+                                    <input type="password" name='Password' className="thisrequired input" data-type="password" />
+                                </div>
+                                <div className="group">
+                                    <label htmlFor="pass" className="label">
+                                        Repeat Password
+                                    </label>
+                                    <input type="password" name='Repeat Password' className="thisrequired input" data-type="password" />
+                                </div>
+
                                 <div className="group">
                                     <input type="submit" className="button" value="Sign Up" />
                                 </div>

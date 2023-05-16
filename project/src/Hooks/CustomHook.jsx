@@ -2,14 +2,10 @@ import React, { useEffect, useState } from 'react';
 
 const CustomHook = () => {
 
-
-
-
-
     useEffect(() => {
-        const Creates = document.querySelectorAll(".thisrequired");
+        const creates = document.querySelectorAll(".thisrequired");
 
-        Creates.forEach((element) => {
+        creates.forEach((element) => {
             element.addEventListener('blur', inputchange);
 
         })
@@ -21,7 +17,7 @@ const CustomHook = () => {
         const element = event.target;
         console.log(element);
 
-        console.log(event);
+        // console.log(event);
 
         const val = element.getAttribute("name");
 
@@ -31,18 +27,16 @@ const CustomHook = () => {
         const text = document.createElement("SPAN");
         text.innerHTML = error;
 
-        const validation = element.nextsibling;
+        const validation = element.nextSibling;
 
+        console.log(validation);
 
         if (element.value === "") {
-            if (!validation || validation.nodename !== "SPAN") {
+            if (!validation || validation.nodeName !== "SPAN") {
                 element.insertAdjacentElement("afterend", text);
             }
-            console.log("colld");
-
-
         } else {
-            if (validation && validation.nodename !== "SPAN") {
+            if (validation && validation.nodeName === "SPAN") {
                 validation.remove();
             }
 
@@ -55,7 +49,7 @@ const CustomHook = () => {
         inputchange,
 
     }
-    console.log(inputchange);
+    // console.log(inputchange);
 
 }
 export default CustomHook;

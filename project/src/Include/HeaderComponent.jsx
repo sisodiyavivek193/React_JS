@@ -25,6 +25,7 @@ const HeaderComponent = () => {
         { path: `/about`, name: "About" },
         { path: `/contact`, name: "Contact" },
         { path: `/loginpage`, name: "LoginPage" },
+        { path: `/apifatch`, name: "ApiFatch" },
         // { path: `/`, name: "vivek" },
         // { path: `/`, name: "kaushikbhai" },
     ];
