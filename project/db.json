@@ -1,0 +1,70 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "name": "Satheesh",
+      "email": "Sat@mail.com",
+      "adderss": "South street"
+    },
+    {
+      "id": 2,
+      "name": "John",
+      "email": "john@mail.com",
+      "adderss": "North street"
+    },
+    {
+      "id": 3,
+      "name": "Robert",
+      "email": "robert@mail.com",
+      "adderss": "East street"
+    },
+    {
+      "id": 4,
+      "name": "Mani",
+      "email": "mani@mail.com",
+      "adderss": "West street"
+    },
+    {
+      "id": 5
+    },
+    {
+      "id": 6
+    },
+    {
+      "id": 16,
+      "name": "vivek",
+      "email": "vivek@mail.com",
+      "adderss": "vivek street"
+    },
+    {
+      "id": 19,
+      "name": "kkk",
+      "email": "kkkk@mail.com",
+      "adderss": "kkk street"
+    },
+    {
+      "id": 21,
+      "name": "kkk",
+      "email": "kkkk@mail.com",
+      "adderss": "kkk street"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "user": [
+    {
+      "id": 5,
+      "name": "Satheesh",
+      "email": "Sat@mail.com",
+      "password": "123"
+    }
+  ]
+}

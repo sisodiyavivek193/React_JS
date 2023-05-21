@@ -4,9 +4,6 @@ import CustomHook from '../Hooks/customHook';
 const LoginPage = () => {
 
 
-
-
-
     const [ActiveClass, setActiveClass] = useState(false);
     const Btnclick = (e) => {
         setActiveClass(!ActiveClass);
@@ -16,12 +13,23 @@ const LoginPage = () => {
     CustomHook(".thisrequired");
     // console.log(CustomHook(".thisrequired"), " vvvv");
 
+    const signindata = (event) => {
+        event.preventDefault();
+    }
+
+    const signupdata = (event) => {
+        event.preventDefault();
+        console.log("called");
+    }
+
+
+
     return (
         <>
             <section className='Sec_1'>
 
                 <div className="login-wrap">
-                    <div className="login-html">
+                    <div className="login-html ">
                         <input id="tab-1" type="radio" name="tab" onClick={Btnclick} className="sign-in" defaultChecked />
                         <label htmlFor="tab-1" className="tab">
                             Sign In
@@ -31,7 +39,8 @@ const LoginPage = () => {
                             Sign Up
                         </label>
                         <div className="login-form">
-                            <div className="sign-in-htm">
+
+                            <form action="" method="post" className="sign-in-htm" onSubmit={signindata}>
                                 <div className="group">
                                     {/* {JSON.stringify(error)} */}
                                     <label className="label">
@@ -59,8 +68,9 @@ const LoginPage = () => {
                                 <div className="foot-lnk">
                                     <a href="#forgot">Forgot Password?</a>
                                 </div>
-                            </div>
-                            <div className="sign-up-htm">
+                            </form>
+
+                            <form action="" method="post" className="sign-up-htm" onSubmit={signupdata} s>
                                 <div className="group">
                                     <label htmlFor="user" className="label">
                                         Username
@@ -93,7 +103,7 @@ const LoginPage = () => {
                                 <div className="foot-lnk">
                                     <label htmlFor="tab-1">Already a member?</label>
                                 </div>
-                            </div>
+                            </form>
                         </div>
                     </div>
                 </div>
