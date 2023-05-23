@@ -12,6 +12,7 @@ const LoginPage = () => {
     // console.log(errors, " errors");
 
 
+
     const Btnclick = (e) => {
         setActiveClass(!ActiveClass);
 
@@ -31,35 +32,12 @@ const LoginPage = () => {
         event.preventDefault();
         // console.log("called");
 
-
-
-
-
-
-
-
-        // fetch("http://localhost:5000/user", {
-        //     method: "POST", // *GET, POST, PUT, DELETE, etc.
-        //     mode: "no-cors", // no-cors, *cors, same-origin
-        //     // cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
-        //     // headers: {
-        //     //   "Content-Type": "application/json",
-        //     //   // 'Content-Type': 'application/x-www-form-urlencoded',
-        //     // },
-        //     body: JSON.stringify(CustomHook.target.value)
-        // }).then((res) => res.json()).then((result) => {
-        //     console.log(result);
-        //     // navigate("/login")
-        // })   
-        // console.log(CustomHook.value, "vvv");
-
-
-
     }
-
     console.log(inp);
+
     const registration = (event) => {
         event.preventDefault();
+
         // console.log("save data", inp);
         // fetch("http://localhost/API/registration", {
         fetch("http://localhost:5000/user", {
@@ -72,8 +50,8 @@ const LoginPage = () => {
             console.log(result);
             //   navigate("/login") 
 
-            username();
-            email();
+            // username();
+            // email();
 
         })
         // fetch(`https://jayramin.000webhostapp.com/loginget?username=${inp.username}&password=${inp.password}`).then((res) => res.json()).then((result) => {
