@@ -5,57 +5,6 @@
       "name": "Satheesh",
       "email": "Sat@mail.com",
       "adderss": "South street"
-    },
-    {
-      "id": 2,
-      "name": "John",
-      "email": "john@mail.com",
-      "adderss": "North street"
-    },
-    {
-      "id": 3,
-      "name": "Robert",
-      "email": "robert@mail.com",
-      "adderss": "East street"
-    },
-    {
-      "id": 4,
-      "name": "Mani",
-      "email": "mani@mail.com",
-      "adderss": "West street"
-    },
-    {
-      "id": 5
-    },
-    {
-      "id": 6
-    },
-    {
-      "id": 16,
-      "name": "vivek",
-      "email": "vivek@mail.com",
-      "adderss": "vivek street"
-    },
-    {
-      "id": 19,
-      "name": "kkk",
-      "email": "kkkk@mail.com",
-      "adderss": "kkk street"
-    },
-    {
-      "id": 21,
-      "name": "kkk",
-      "email": "kkkk@mail.com",
-      "adderss": "kkk street"
-    },
-    {
-      "id": 22
-    },
-    {
-      "id": 26,
-      "name": "aaa",
-      "email": "aaa@mail.com",
-      "adderss": "aaa street"
     }
   ],
   "comments": [
@@ -82,124 +31,22 @@
   },
   "user": [
     {
-      "id": 1,
       "name": "Satheesh",
       "email": "Sat@mail.com",
+      "role": 1,
       "password": "123"
     },
     {
-      "id": 2
-    },
-    {
-      "name": "vivek",
-      "email": "sisodiyavivek12@gmail.com",
-      "password": "123",
-      "id": 3
-    },
-    {
-      "id": 4
-    },
-    {
-      "name": "vivek52952",
-      "email": "sisodiyavivek12@gmail.com",
-      "password": "123",
-      "id": 5
-    },
-    {
-      "name": "vivek52952",
-      "email": "sisodiyavivek12@gmail.com",
-      "password": "123",
-      "id": 6
-    },
-    {
-      "name": "vivek52952",
-      "email": "sisodiyavivek12@gmail.com",
-      "password": "123",
-      "id": 7
-    },
-    {
-      "name": "123",
-      "email": "123",
-      "password": "133",
-      "id": 8
-    },
-    {
-      "name": "vivek",
-      "email": "sisodiyavivek12@gmail.com",
-      "password": "111211",
-      "id": 9
-    },
-    {
-      "name": "vivek",
-      "email": "sisodiyavivek12@gmail.com",
-      "password": "111211",
-      "id": 10
-    },
-    {
-      "name": "vivek",
-      "email": "sisodiyavivek12@gmail.com",
-      "password": "1111111",
-      "id": 11
-    },
-    {
-      "name": "vivek",
-      "email": "sisodiyavivek12@gmail.com",
-      "password": "1111111",
-      "id": 12
-    },
-    {
-      "name": "vivek",
-      "email": "sisodiyavivek12@gmail.com",
-      "password": "44444444",
-      "id": 13
-    },
-    {
-      "name": "vivek",
-      "email": "sisodiyavivek12@gmail.com",
-      "password": "44444444",
-      "id": 14
-    },
-    {
-      "name": "vivek",
-      "email": "sisodiyavivek12@gmail.com",
-      "password": "44444444",
-      "id": 15
-    },
-    {
-      "name": "test",
-      "password": "15151",
-      "email": "test@gmail.com",
-      "id": 16
-    },
-    {
-      "name": "test",
-      "password": "15151",
-      "email": "test@gmail.com",
-      "id": 17
-    },
-    {
       "name": "test",
       "email": "test@gmail.com",
-      "password": "61",
-      "id": 18
+      "password": "11111",
+      "role": 2
     },
     {
-      "name": "test",
-      "email": "test@gmail.com",
-      "password": "1616",
-      "id": 19
-    },
-    {
-      "name": "wsC",
-      "email": "QSS",
-      "password": "QDS",
-      "id": 20
-    },
-    {
-      "name": "wsC",
-      "email": "QSS",
-      "password": "QDS",
-      "id": 21
+      "name": "vvv",
+      "email": "vvvv@gmail.com",
+      "password": "vvvvv",
+      "role": 2
     }
   ]
 }

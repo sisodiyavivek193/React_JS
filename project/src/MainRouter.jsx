@@ -55,7 +55,21 @@ const MainRouter = createBrowserRouter([
         <ApiFatch />
       </>
     ),
-  },
+  }, {
+    path: "/admindashbord",
+    element: (
+      <>
+        admin panal
+      </>
+    ),
+  }, {
+    path: "/dashbord",
+    element: (
+      <>
+        user side
+      </>
+    ),
+  }
 
 ]);
 
