@@ -31,6 +31,8 @@ const LoginPage = () => {
         // console.log("inside the signupdata", inp);
 
         event.preventDefault();
+        console.log("name", inp.name);
+        console.log("passwword", inp.password);
         // console.log("called");
         try {
             await axios.get(`http://localhost:5000/user?name=${inp.name}&password=${inp.password}`)
@@ -38,10 +40,10 @@ const LoginPage = () => {
                     console.log("than inside response", response);
                     if (response.status == 200) {
                         console.log("server connect", response);
-                        // console.log("server connect", response.data[0]);
                         // console.log("server connect", response.data[0].role);
 
                         if (response.data[0].role == 1) {
+                            console.log("server connect inside if", response.data[0]);
                             navigate("/admindashbord")
                         } else {
                             navigate("/dashbord")
