@@ -7,9 +7,10 @@ import About from "./Pages/About.jsx";
 import Contact from "./Pages/Contact.jsx";
 import LoginPage from "./Component/LoginPage.jsx";
 import ApiFatch from "./Component/ApiFatch.jsx";
+import { Suspense } from "react";
 // import "./index.css";
 
-
+const AdminUser = React.lazy(() => import("./Admin/AdminRouter.jsx"))
 
 const MainRouter = createBrowserRouter([
   {
@@ -63,11 +64,19 @@ const MainRouter = createBrowserRouter([
       </>
     ),
   }, {
-    path: "/dashbord",
+    path: "/userside",
     element: (
       <>
         user side
       </>
+    ),
+  },
+  {
+    path: "admin/*",
+    element: (
+      <Suspense fallback={<h3>Loading.......</h3>}>
+        <AdminUser />
+      </Suspense>
     ),
   }
 

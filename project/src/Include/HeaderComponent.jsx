@@ -24,8 +24,8 @@ const HeaderComponent = () => {
         { path: `/`, name: "Home" },
         { path: `/about`, name: "About" },
         { path: `/contact`, name: "Contact" },
-        { path: `/loginpage`, name: "LoginPage" },
         { path: `/apifatch`, name: "ApiFatch" },
+        // { path: `/loginpage`, name: "LoginPage" },
         // { path: `/`, name: "vivek" },
         // { path: `/`, name: "kaushikbhai" },
     ];
@@ -59,6 +59,11 @@ const HeaderComponent = () => {
                     <MDBCollapse navbar show={showBasic}>
                         <MDBNavbarNav className="ms-auto w-auto me-5 mb-2 mb-lg-0">
                             {mapdata}
+                            <MDBNavbarItem>
+                                <button className="btn btn-primary">
+                                    <Link to="loginpage" className="text-light">Login </Link>
+                                </button>
+                            </MDBNavbarItem>
                         </MDBNavbarNav>
 
                         {/* <form className='d-flex input-group w-auto'>

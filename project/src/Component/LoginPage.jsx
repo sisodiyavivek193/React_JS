@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import CustomHook from '../Hooks/customHook';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const LoginPage = () => {
     const [username, setusername] = useState("");
@@ -44,9 +44,9 @@ const LoginPage = () => {
 
                         if (response.data[0].role == 1) {
                             console.log("server connect inside if", response.data[0]);
-                            navigate("/admindashbord")
+                            navigate("/admin/admindashbord")
                         } else {
-                            navigate("/dashbord")
+                            navigate("/userside")
                         }
 
 
@@ -112,6 +112,7 @@ const LoginPage = () => {
                     {disperror ? <>error while conectiong please try after osme time</> :
                         <>
                             <div className="login-html ">
+                                <Link to="/" className='home_link' ><i className='fa  fa-home'></i></Link>
                                 <input id="tab-1" type="radio" name="tab" onClick={Btnclick} className="sign-in" defaultChecked />
                                 <label htmlFor="tab-1" className="tab">
                                     Sign In
