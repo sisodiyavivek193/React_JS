@@ -2,17 +2,22 @@ import React, { useEffect, useState } from 'react';
 import CustomHook from '../Hooks/customHook';
 import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
+import { useCookies } from 'react-cookie';
 
 const LoginPage = () => {
     const [username, setusername] = useState("");
     const [email, setemail] = useState("");
     const [password, setpassword] = useState("");
 
+    const [cookies, setCookie] = useCookies(["name"]);
 
-    const [disperror, setdisperror] = useState(false);
+
+
+    const [disperror, setdisperror] = useState("");
+    const [Loginmes, setLoginmes] = useState("");
 
     const navigate = useNavigate();
-    const { handleChange, inp, errors } = CustomHook({ role: "Clint" }, {});
+    const { handleChange, inp, errors } = CustomHook({ role: "2" }, {});
     const [ActiveClass, setActiveClass] = useState(false);
     // console.log(handleChange, " vvvv");
     // console.log(inp, " inp");
@@ -28,28 +33,42 @@ const LoginPage = () => {
     // CustomHook(".thisrequired");
     // console.log(CustomHook(".thisrequired"), " vvvv");
     const loginData = async (event) => {
+        event.preventDefault();
         // console.log("inside the signupdata", inp);
 
-        event.preventDefault();
-        console.log("name", inp.name);
-        console.log("passwword", inp.password);
+        // console.log("name", inp.name);
+        // console.log("passwword", inp.password);
         // console.log("called");
         try {
-            await axios.get(`http://localhost:5000/user?name=${inp.name}&password=${inp.password}`)
-                .then((response) => {
-                    console.log("than inside response", response);
-                    if (response.status == 200) {
-                        console.log("server connect", response);
+            const store = await axios.get(`http://localhost:5000/user?name=${inp.name}&password=${inp.password}`)
+                .then((res) => {
+                    // console.log(inp.name);
+                    console.log("than inside response", res);
+                    if (res.status === 200) {
+                        // console.log("server connect", response);
                         // console.log("server connect", response.data[0].role);
+                        // console.log("inside if");
+                        // console.log(res.data[0].name);
+                        // setCookie('name', res.data[0].name);
+                        // console.log("nandan");
+                        // console.log(inp.name);
 
-                        if (response.data[0].role == 1) {
-                            console.log("server connect inside if", response.data[0]);
-                            navigate("/admin/admindashbord")
+                        if (res.data.length > 0) {
+                            // console.log("data", res.data);
+                            // console.log("in", res.length.data[0].name);
+
+                            setCookie("username", res.data[0].name)
+                            setCookie("ID", res.data[0].id)
+                            if (res.data[0].role == 1) {
+                                // console.log("server connect inside if", res.data[0]);
+                                navigate("/admin/admindashbord")
+                            } else {
+                                navigate("/userside")
+                            }
                         } else {
-                            navigate("/userside")
+                            console.log("invalid user");
+                            // setLoginmes("invalid user");
                         }
-
-
                     } else {
                         console.log(" error server  connect");
                     }
@@ -65,18 +84,16 @@ const LoginPage = () => {
                     } else {
                         console.log(error);
                     }
-                });;
-        } catch (error) {
+                })
+        }
+        catch (error) {
             console.log(error);
         }
-
-
-
     }
 
     const registration = (event) => {
         event.preventDefault();
-
+        // console.log(inp);
         // console.log("save data", inp);
         // fetch("http://localhost/API/registration", {
         fetch("http://localhost:5000/user", {
@@ -106,7 +123,6 @@ const LoginPage = () => {
     return (
         <>
             <section className='Sec_1'>
-
                 <div className="login-wrap">
 
                     {disperror ? <>error while conectiong please try after osme time</> :

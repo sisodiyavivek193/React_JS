@@ -210,7 +210,24 @@ a {
 	position: fixed;
 	top: 11px;
 	right: 420px;
+	height: 35px;
+	width: 35px;
 	z-index: 999;
+	background-color: #fff;
+	display: grid;
+	place-items: center;
+	border-radius: 50%;
+}
+
+.home_link i:hover {
+	transform: scale(1.2);
+	transition: all .2s ease-in-out;
+	color: #38476f;
+}
+
+.home_link i {
+	color: black;
+
 }
 
 
@@ -224,7 +241,7 @@ a {
 
 .list ul li {
 	display: block;
-	margin: 20px;
+	/* padding: 20px 0; */
 	text-align: center;
 }
 
@@ -244,11 +261,14 @@ a {
 	min-width: 20%;
 	position: fixed;
 	display: block;
-	background-color: red;
+	background-color: black;
 	transform: translate(0);
-	transition: 0.5s ease-in-out;
+	transition: all 0.5s ease-in-out;
 	overflow-x: hidden;
 	overflow-y: auto;
+	padding: 30px 0;
+	color: #fff;
+	font-size: 19px;
 }
 
 #sidebar.show {
@@ -267,4 +287,23 @@ a {
 
 .bar {
 	border: none;
+	background-color: transparent;
+}
+
+header {
+	/* background-color: #c8c8c8; */
+	/* box-shadow: ; */
+	box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+	padding: 25px 0;
+
+}
+
+nav {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.bar i {
+	font-size: 25px;
 }

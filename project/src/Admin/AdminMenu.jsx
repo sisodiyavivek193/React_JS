@@ -14,18 +14,25 @@ const AdminMenu = () => {
 		<>
 			<aside id="sidebar" className={add ? "show" : ""} >
 				<div class="list" >
+					<h2 className='text-center text-danger'>Dashbord</h2>
 					<ul>
-						<li><a href="#">home</a></li>
-						<li><a href="#">about</a></li>
-						<li><a href="#">buy</a></li>
-						<li><a href="#">contact</a></li>
+						<li ><Link to="admindashbord">Dashbord</Link></li>
+						<li><Link to="alluserdata">All User Data</Link></li>
 					</ul>
 				</div>
 			</aside>
 			<main id="main" className={add ? "mainactive" : ""}>
-				<button class="bar" onClick={btnclick}>
-					<i className={add ? "fa fa-times" : "fa fa-bars"}></i>
-				</button>
+				<header>
+					<nav>
+						<button class="bar" onClick={btnclick}>
+							<i className={add ? "fa fa-times" : "fa fa-bars"}></i>
+						</button>
+						<div className="box">
+
+							<a href="#"><i className='fa-solid fa-user'></i></a>
+						</div>
+					</nav>
+				</header>
 				<Outlet></Outlet>
 			</main>
 
