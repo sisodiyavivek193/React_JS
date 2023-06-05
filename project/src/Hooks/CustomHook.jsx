@@ -42,7 +42,11 @@ const CustomHook = (intval, initError) => {
             }
         }
     }
-    return { handleChange, inp, errors }
+
+    const UpdateData = (data) => {
+        setInput(data)
+    }
+    return { handleChange, inp, errors,UpdateData }
 };
 
 export default CustomHook;

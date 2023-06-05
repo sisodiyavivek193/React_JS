@@ -13,7 +13,7 @@ const AdminMenu = () => {
 	return (
 		<>
 			<aside id="sidebar" className={add ? "show" : ""} >
-				<div class="list" >
+				<div className="list" >
 					<h2 className='text-center text-danger'>Dashbord</h2>
 					<ul>
 						<li ><Link to="admindashbord">Dashbord</Link></li>
@@ -24,7 +24,7 @@ const AdminMenu = () => {
 			<main id="main" className={add ? "mainactive" : ""}>
 				<header>
 					<nav>
-						<button class="bar" onClick={btnclick}>
+						<button className="bar" onClick={btnclick}>
 							<i className={add ? "fa fa-times" : "fa fa-bars"}></i>
 						</button>
 						<div className="box">
