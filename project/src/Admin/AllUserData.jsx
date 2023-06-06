@@ -6,8 +6,14 @@ const AllUserData = () => {
 
 	const [Loginmes, setLoginmes] = useState("");
 	const [disperror, setdisperror] = useState("");
-	const [allUser, setAllUser] = useState("");
 	const [lodar, setlodar] = useState(false);
+
+	const [allUser, setAllUser] = useState(null);
+	const [search, setSearch] = useState(null);
+
+
+	const [APIData, setAPIData] = useState([]);
+	const [Delete, setData] = useState(false);
 
 	const navigate = useNavigate();
 
@@ -15,7 +21,7 @@ const AllUserData = () => {
 
 	useEffect(() => {
 		loginData();
-	}, []);
+	}, [Delete]);
 
 
 
@@ -30,6 +36,7 @@ const AllUserData = () => {
 				.then((res) => {
 					// console.log(inp.name);
 					// console.log("than inside response", res);
+					setSearch(res.data);
 					if (res.status === 200) {
 						// console.log("server connect", response);
 						// console.log("server connect", response.data[0].role);
@@ -87,74 +94,122 @@ const AllUserData = () => {
 	}
 
 
+	// const deletebtn = async (id) => {
+
+	// 	const response = await axios.delete(`http://localhost:5000/user/${id}`);
+
+	// }
+
+
+	const getData = () => {
+		axios.get(`http://localhost:5000/user`)
+			.then((getData) => {
+				setAPIData(getData.data);
+			})
+	}
+
 	const deletebtn = async (id) => {
 
-
-		try {
-			const response = await axios.delete(`http://localhost:5000/user/${id}`);
-			console.log("Response: ", response);
-			if (response.status === 200) {
-
-				setAllUser((prevUsers) => prevUsers.filter((user) => user.key !== id));
-				setdisperror(false);
-				console.log("User deleted successfully");
-				// navigate("/admin/alluserdata");
-			} else {
-				console.log("Error deleting user");
-			}
-		} catch (error) {
-			setdisperror(true);
-			if (error.response) {
-				console.log(error.response);
-				console.log("Server responded");
-			} else if (error.request) {
-				console.log("Network error");
-			} else {
-				console.log(error);
-			}
-		}
-
+		const response = await axios.delete(`http://localhost:5000/user/${id}`)
+			.then((res) => {
+				// setlodar(false);
+				setData();
+			})
+		// navigate("/admin/alluserdata"); // Navigate to the specified path
 	}
+
+
+
+	const changeData = (event) => {
+		// console.log("allUsers ", SearchData);	
+		console.log("handleSearch ", event.target.value);
+		const value = event.target.value.toLowerCase();
+		console.log(value);
+
+		const result = search.filter((data) => {
+			console.log("val", data);
+			return (
+				data.name.toLowerCase().search(value) !== -1 ||
+				data.email.toLowerCase().search(value) !== -1 ||
+				data.id.toString().search(value) !== -1
+			);
+		});
+
+
+
+		let alluserdatalist = Object.entries(result).map(([key, value], i) => {
+			// console.log(key, "key");
+			// console.log(value, "value");
+			// console.log(i, "i");
+			return (
+				<tr key={i}>
+					<td>{value.id}</td>
+					<td>{value.name}</td>
+					<td>{value.email}</td>
+					<td>{value.password}</td>
+					<td className='text-center' >
+						<Link className='btn btn-primary' to={`/admin/edituserdata/${value.id}`}>Edit</Link>
+					</td >
+					<td className='text-center'>
+						<Link className='btn btn-danger' onClick={() => deletebtn(value.id)} >Delete</Link>
+					</td >
+				</tr>
+			);
+		});
+		setAllUser(alluserdatalist)
+		setlodar(true)
+
+	};
 
 	return (
 		<>
+			<div className="box">
+				<input type="text" onChange={(event) => changeData(event)} />
+			</div>
 			<section>
 				<h2 className='text-center m-3 fs-1'>User Data</h2>
-				<table className='table table-bordered'>
-					<thead>
-						<tr className='table-dark'>
-							<th>Id</th>
-							<th>Name</th>
-							<th>Email</th>
-							<th>Password</th>
-							<th className='text-center' colSpan={2}>Action</th>
-						</tr>
-					</thead>
-					<tbody>
+				<div className="row">
+					<div className="col_12">
+						<Link to="/admin/addtuserdata" className='btn btn-primary m-3 text-end '>Add User</Link>
+					</div>
+
+					<table className='table table-bordered    border-dark table-striped table-success  border-primary'>
+						<thead>
+							<tr className='table-dark'>
+								<th>Id</th>
+								<th>Name</th>
+								<th>Email</th>
+								<th>Password</th>
+								<th className='text-center' colSpan={2}>Action</th>
+							</tr>
+						</thead>
+						<tbody>
 
 
-						{/* {lodar ?
+							{/* {lodar ?
 							allUser :
 							<tr>
 								<td colSpan={5}>No Data Found</td>
 							</tr>
 						} */}
 
-						{lodar ? (
-							allUser.length > 0 ? (
-								allUser
+							{lodar ? (
+								allUser.length > 0 ? (
+									allUser
+								) : (
+									<tr>
+										<td colSpan={5}>No Data Found</td>
+									</tr>
+								)
 							) : (
 								<tr>
-									<td colSpan={5}>No Data Found</td>
+									<td colSpan={5}>Loading...</td>
 								</tr>
-							)
-						) : (
-							<tr>
-								<td colSpan={5}>Loading...</td>
-							</tr>
-						)}
-					</tbody>
-				</table>
+							)}
+						</tbody>
+					</table>
+				</div>
+
 			</section>
 		</>
 	);

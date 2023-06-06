@@ -4,6 +4,7 @@ import AdminMenu from './AdminMenu';
 import AdminDashbord from './AdminDashbord';
 import AllUserData from './AllUserData';
 import EditUserData from './EditUserData.jsx';
+import AddUserData from './AddUserData.jsx';
 
 const AdminRouter = () => {
 	return (
@@ -13,6 +14,7 @@ const AdminRouter = () => {
 					<Route path='admindashbord' element={<AdminDashbord />} />
 					<Route path='alluserdata' element={<AllUserData />} />
 					<Route path='edituserdata/:id' element={<EditUserData />} />
+					<Route path='addtuserdata' element={<AddUserData />} />
 				</Route >
 			</Routes>
 		</>

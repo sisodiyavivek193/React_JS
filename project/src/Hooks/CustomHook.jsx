@@ -21,7 +21,8 @@ const CustomHook = (intval, initError) => {
         // console.log(e.target);
         // console.log(e.target.value);
         console.log(e.target.className);
-        if (e.target.className == "thisrequired") {
+        // if (e.target.className == "thisrequired") {
+        if (e.currentTarget.classList.contains = "thisrequired") {
             if (e.target.value === "") {
                 console.log("error");
                 setError((prevErrors) => ({ ...prevErrors, [errorKey]: errorMessage }));
@@ -46,7 +47,7 @@ const CustomHook = (intval, initError) => {
     const UpdateData = (data) => {
         setInput(data)
     }
-    return { handleChange, inp, errors,UpdateData }
+    return { handleChange, inp, errors, UpdateData }
 };
 
 export default CustomHook;

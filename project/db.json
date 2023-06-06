@@ -19,11 +19,53 @@
   },
   "user": [
     {
-      "role": "2",
+      "role": "1",
       "name": "vivek123",
       "email": "test@gmail.com",
       "password": "123",
       "id": 5
+    },
+    {
+      "role": "2",
+      "name": "nandan",
+      "password": "aaaaaa",
+      "email": "gvslknb@dfqeh",
+      "id": 6
+    },
+    {
+      "role": "2",
+      "name": "test",
+      "email": "test@gmail.com",
+      "password": "1651",
+      "id": 11
+    },
+    {
+      "role": "2",
+      "name": "virat",
+      "email": "virat@gmail.com",
+      "password": "65464",
+      "id": 7
+    },
+    {
+      "role": "2",
+      "name": "aksh",
+      "email": "aksh@gmail.com",
+      "password": "4646",
+      "id": 21
+    },
+    {
+      "role": "2",
+      "name": "anything",
+      "email": "anything@gmail.com",
+      "password": "476747",
+      "id": 37
+    },
+    {
+      "role": "2",
+      "name": "test",
+      "password": "jejdnndk",
+      "email": "test@gmail.com",
+      "id": 38
     }
   ]
 }

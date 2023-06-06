@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import CustomHook from '.././Hooks/customHook';
 import AdminDashbord from './AdminDashbord';
 
@@ -121,30 +121,49 @@ const EditUserData = () => {
             {JSON.stringify(inp)}
             <div className="row">
                 <div className="col-6">
-                    <div className="card m-5">
-                        <input type="text" className='form-control'
-                            value={ErrorMsg ? "true" : inp.name}
-                            placeholder='Enter User Name' name='name'
-                            onChange={handleChange}
-                            id='' />
-                        <input type="Email" className='form-control'
-                            value={ErrorMsg ? "true" : inp.email}
-                            placeholder='EnterEmail' name='email'
-                            onChange={handleChange}
-                            id='' />
+                    <div className="row mt-3">
+                        <div className="col">
+                            <input type="text" className='form-control'
+                                value={ErrorMsg ? "true" : inp.name}
+                                placeholder='Enter User Name' name='name'
+                                onChange={handleChange}
+                                id='' />
+                        </div>
+                        <div className="row mt-3">
+                            <div className="col">
+                                <input type="Email" className='form-control'
+                                    value={ErrorMsg ? "true" : inp.email}
+                                    placeholder='EnterEmail' name='email'
+                                    onChange={handleChange}
+                                    id='' />
+                            </div>
+                            <div className="row mt-3">
+                                <div className="col">
+                                    <input type="Password" className='form-control'
+                                        value={ErrorMsg ? "true" : inp.password}
+                                        placeholder='Enter Password' name='password'
+                                        onChange={handleChange}
+                                    />
+                                </div>
+                                <div className="row mt-3">
+                                    <div className="col">
+                                        <button className='btn btn-primary ' onClick={handleChangeUpdateData}>Update </button>
+                                        <Link className='btn btn-primary mx-2' to="/admin/alluserdata">Back</Link>
+                                    </div>
+                                </div>
 
-                        <input type="Password" className='form-control'
-                            value={ErrorMsg ? "true" : inp.password}
-                            placeholder='Enter Password' name='password'
-                            onChange={handleChange}
-                        />
-                        <button onClick={handleChangeUpdateData}>Update Data</button>
 
+
+
+
+
+
+
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-
-
         </>
     );
 };
