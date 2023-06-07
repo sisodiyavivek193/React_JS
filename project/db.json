@@ -37,7 +37,7 @@
       "name": "test",
       "email": "test@gmail.com",
       "password": "1651",
-      "id": 11
+      "id": 8
     },
     {
       "role": "2",
@@ -51,21 +51,14 @@
       "name": "aksh",
       "email": "aksh@gmail.com",
       "password": "4646",
-      "id": 21
+      "id": 9
     },
     {
       "role": "2",
       "name": "anything",
       "email": "anything@gmail.com",
       "password": "476747",
-      "id": 37
-    },
-    {
-      "role": "2",
-      "name": "test",
-      "password": "jejdnndk",
-      "email": "test@gmail.com",
-      "id": 38
+      "id": 11
     }
   ]
 }

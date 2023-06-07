@@ -9,7 +9,7 @@ const LoginPage = () => {
     const [email, setemail] = useState("");
     const [password, setpassword] = useState("");
 
-    const [cookies, setCookie] = useCookies(["name"]);
+    const [cookies, setCookie, removeCookie] = useCookies(["name"]);
 
 
 
@@ -40,7 +40,7 @@ const LoginPage = () => {
         // console.log("passwword", inp.password);
         // console.log("called");
         try {
-            const store = await axios.get(`http://localhost:5000/user?name=${inp.name}&password=${inp.password}`)
+            const store = await axios.get(`http://localhost:5000/user?email=${inp.email}&password=${inp.password}`)
                 .then((res) => {
                     // console.log(inp.name);
                     console.log("than inside response", res);
@@ -59,10 +59,16 @@ const LoginPage = () => {
 
                             setCookie("username", res.data[0].name)
                             setCookie("ID", res.data[0].id)
+
+
+
+
                             if (res.data[0].role == 1) {
                                 // console.log("server connect inside if", res.data[0]);
+
                                 navigate("/admin/admindashbord")
                             } else {
+                                // navigate("/loginpage")
                                 navigate("/userside")
                             }
                         } else {
@@ -90,6 +96,9 @@ const LoginPage = () => {
             console.log(error);
         }
     }
+
+
+
 
     const registration = (event) => {
         event.preventDefault();
@@ -120,11 +129,25 @@ const LoginPage = () => {
     }
 
 
+
+    const handleLogout = () => {
+        axios.get(`http://localhost:5000/user?name=${inp.name}&password=${inp.password}`)
+            .then((res) => {
+                removeCookie("username"); // Remove username cookie
+                removeCookie("ID"); // Remove ID cookie
+                navigate("/"); // Navigate to the home page or the desired page after logout
+            })
+    };
+
+
     return (
         <>
             <section className='Sec_1'>
-                <div className="login-wrap">
 
+                {cookies.username && cookies.ID ? (
+                    <button className="button" onClick={handleLogout}>Logout</button>
+                ) : null}
+                <div className="login-wrap">
                     {disperror ? <>error while conectiong please try after osme time</> :
                         <>
                             <div className="login-html ">
@@ -143,9 +166,9 @@ const LoginPage = () => {
                                         <div className="group">
                                             {/* {JSON.stringify(handleChange)} */}
                                             <label className="label">
-                                                Username
+                                                Email
                                             </label>
-                                            <input type="text" name='name' onBlur={handleChange} className="thisrequired" />
+                                            <input type="email" name='email' onBlur={handleChange} className="thisrequired" />
                                             {/* {errors.usernameerror ? <span>This Feild is Required</span> : <></>} */}
                                         </div>
                                         <div className="group">
@@ -230,7 +253,10 @@ const LoginPage = () => {
                         </div>
                     </div>
 
-                </> : <></>}
+                </> : null}
+
+
+
 
             </section>
 

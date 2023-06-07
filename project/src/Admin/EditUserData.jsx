@@ -68,11 +68,6 @@ const EditUserData = () => {
     }
 
 
-
-
-
-
-
     const loginData = async (event) => {
         // console.log("inside the signupdata", inp);
 
