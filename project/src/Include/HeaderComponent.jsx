@@ -1,5 +1,5 @@
-import React, { Component, useState } from "react";
-import { Link } from "react-router-dom";
+import React, { Component, useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import {
     MDBContainer,
     MDBNavbar,
@@ -16,10 +16,18 @@ import {
     MDBDropdownItem,
     MDBCollapse,
 } from "mdb-react-ui-kit";
+import { useCookies } from "react-cookie";
 
 const HeaderComponent = () => {
 
     const [showBasic, setShowBasic] = useState(false);
+
+    const [cookies, setCookie, removeCookie] = useCookies([]);
+    const navigate = useNavigate();
+    // const [login, setlogin] = useState(cookies.username !== undefined, cookies.id !== undefined);
+    const [login, setlogin] = useState(!!cookies.username, !!cookies.id);
+
+
     const data = [
         { path: `/`, name: "Home" },
         { path: `/about`, name: "About" },
@@ -29,6 +37,16 @@ const HeaderComponent = () => {
         // { path: `/`, name: "vivek" },
         // { path: `/`, name: "kaushikbhai" },
     ];
+
+
+    const handleLogout = () => {
+        removeCookie("username"); // Remove username cookie
+        removeCookie("id"); // Remove ID cookie
+        console.log("seccessfully logged out");
+        setlogin(false);
+        navigate("/loginpage"); // Navigate to the home page or the desired page after logout
+    };
+
     const mapdata = data.map(({ path, name }, index) => {
         return (
             <MDBNavbarItem key={index}>
@@ -59,11 +77,25 @@ const HeaderComponent = () => {
                     <MDBCollapse navbar show={showBasic}>
                         <MDBNavbarNav className="ms-auto w-auto me-5 mb-2 mb-lg-0">
                             {mapdata}
+
+
+
+
                             <MDBNavbarItem>
-                                <button className="btn btn-primary">
-                                    <Link to="loginpage" className="text-light">Login </Link>
-                                </button>
+                                {login ? (
+                                    <button onClick={handleLogout} className="btn btn-primary">
+                                        Logout
+                                    </button>
+                                ) : (
+                                    <button className="btn btn-primary">
+                                        <Link to="/loginpage" className="text-light">Login</Link>
+                                    </button>
+                                )}
                             </MDBNavbarItem>
+
+
+
+
                         </MDBNavbarNav>
 
                         {/* <form className='d-flex input-group w-auto'>

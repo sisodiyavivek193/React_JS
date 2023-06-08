@@ -12,7 +12,6 @@ const EditUserData = () => {
     const [state, setState] = useState({ name: "", email: "", password: "" })
     const { handleChange, inp, errors, UpdateData } = CustomHook(state, {});
     const navigate = useNavigate();
-    const [allUser, setAllUser] = useState("");
 
     const [disperror, setdisperror] = useState("");
 
@@ -124,39 +123,40 @@ const EditUserData = () => {
                                 onChange={handleChange}
                                 id='' />
                         </div>
-                        <div className="row mt-3">
-                            <div className="col">
-                                <input type="Email" className='form-control'
-                                    value={ErrorMsg ? "true" : inp.email}
-                                    placeholder='EnterEmail' name='email'
-                                    onChange={handleChange}
-                                    id='' />
-                            </div>
-                            <div className="row mt-3">
-                                <div className="col">
-                                    <input type="Password" className='form-control'
-                                        value={ErrorMsg ? "true" : inp.password}
-                                        placeholder='Enter Password' name='password'
-                                        onChange={handleChange}
-                                    />
-                                </div>
-                                <div className="row mt-3">
-                                    <div className="col">
-                                        <button className='btn btn-primary ' onClick={handleChangeUpdateData}>Update </button>
-                                        <Link className='btn btn-primary mx-2' to="/admin/alluserdata">Back</Link>
-                                    </div>
-                                </div>
-
-
-
-
-
-
-
-
-                            </div>
+                    </div>
+                    <div className="row mt-3">
+                        <div className="col">
+                            <input type="Email" className='form-control'
+                                value={ErrorMsg ? "true" : inp.email}
+                                placeholder='EnterEmail' name='email'
+                                onChange={handleChange}
+                                id='' />
                         </div>
                     </div>
+                    <div className="row mt-3">
+                        <div className="col">
+                            <input type="Password" className='form-control'
+                                value={ErrorMsg ? "true" : inp.password}
+                                placeholder='Enter Password' name='password'
+                                onChange={handleChange}
+                            />
+                        </div>
+                    </div>
+
+                    <div className="row mt-3">
+                        <div className="col">
+                            <button className='btn btn-primary ' onClick={handleChangeUpdateData}>Update </button>
+                            <Link className='btn btn-primary mx-2' to="/admin/alluserdata">Back</Link>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
                 </div>
             </div>
         </>

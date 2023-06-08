@@ -1,15 +1,26 @@
 import React, { useState } from 'react';
-import { Link, Outlet } from 'react-router-dom';
+import { useCookies } from 'react-cookie';
+import { Link, Outlet, useNavigate } from 'react-router-dom';
 
 const AdminMenu = () => {
 
-	const [add, setadd] = useState(false)
+	const [add, setadd] = useState(false);
+	const navigate = useNavigate();
+	const [cookies, setCookie, removeCookie] = useCookies([]);
 
 
 	const btnclick = () => {
 		setadd(!add)
 		console.log("callad");
 	}
+
+
+
+	const handleLogout = () => {
+		removeCookie('username', { path: '/' });
+		// removeCookie("username"); // Remove username cookie
+		removeCookie("id"); // Remove id cookie
+	};
 	return (
 		<>
 			<aside id="sidebar" className={add ? "show" : ""} >
@@ -19,7 +30,9 @@ const AdminMenu = () => {
 						<li ><Link to="admindashbord">Dashbord</Link></li>
 						<li><Link to="alluserdata">All User Data</Link></li>
 					</ul>
+					{cookies.username && <button onClick={handleLogout} className='btn btn-primary '>Logout</button>}
 				</div>
+
 			</aside>
 			<main id="main" className={add ? "mainactive" : ""}>
 				<header>

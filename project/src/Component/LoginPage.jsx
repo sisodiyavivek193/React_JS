@@ -9,9 +9,7 @@ const LoginPage = () => {
     const [email, setemail] = useState("");
     const [password, setpassword] = useState("");
 
-    const [cookies, setCookie, removeCookie] = useCookies(["name"]);
-
-
+    const [cookies, setCookie, removeCookie] = useCookies(["name", "id"]);
 
     const [disperror, setdisperror] = useState("");
     const [Loginmes, setLoginmes] = useState("");
@@ -51,15 +49,15 @@ const LoginPage = () => {
                         // console.log(res.data[0].name);
                         // setCookie('name', res.data[0].name);
                         // console.log("nandan");
-                        // console.log(inp.name);
+                        // console.log(inp.name);4
+                        console.log("cookies", cookies.id);
 
                         if (res.data.length > 0) {
                             // console.log("data", res.data);
                             // console.log("in", res.length.data[0].name);
-
+                            console.log("id", res.data[0].id);
                             setCookie("username", res.data[0].name)
-                            setCookie("ID", res.data[0].id)
-
+                            setCookie("id", res.data[0].id)
 
 
 
@@ -68,15 +66,16 @@ const LoginPage = () => {
 
                                 navigate("/admin/admindashbord")
                             } else {
-                                // navigate("/loginpage")
+                                // navigate("/")
                                 navigate("/userside")
                             }
+
                         } else {
                             // console.log("invalid user");
                             setLoginmes("invalid user");
                         }
                     } else {
-                        console.log(" error server  connect");
+                        navigate("/");
                     }
 
                 }).catch((error) => {
@@ -130,23 +129,9 @@ const LoginPage = () => {
 
 
 
-    const handleLogout = () => {
-        axios.get(`http://localhost:5000/user?name=${inp.name}&password=${inp.password}`)
-            .then((res) => {
-                removeCookie("username"); // Remove username cookie
-                removeCookie("ID"); // Remove ID cookie
-                navigate("/"); // Navigate to the home page or the desired page after logout
-            })
-    };
-
-
     return (
         <>
             <section className='Sec_1'>
-
-                {cookies.username && cookies.ID ? (
-                    <button className="button" onClick={handleLogout}>Logout</button>
-                ) : null}
                 <div className="login-wrap">
                     {disperror ? <>error while conectiong please try after osme time</> :
                         <>
@@ -248,7 +233,7 @@ const LoginPage = () => {
                                 <button type="button" className="btn-close" onClick={() => setLoginmes("")} data-bs-dismiss="toast" aria-label="Close"></button>
                             </div>
                             <div className="toast-body">
-                                Invalid User
+                                Invalid Email
                             </div>
                         </div>
                     </div>
