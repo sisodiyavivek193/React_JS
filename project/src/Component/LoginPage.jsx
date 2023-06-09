@@ -67,7 +67,7 @@ const LoginPage = () => {
                                 navigate("/admin/admindashbord")
                             } else {
                                 // navigate("/")
-                                navigate("/userside")
+                                navigate("/")
                             }
 
                         } else {

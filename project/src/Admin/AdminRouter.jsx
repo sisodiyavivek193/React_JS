@@ -18,7 +18,7 @@ const AdminRouter = () => {
 			navigate("/loginpage")
 		}
 
-	}, [cookies]);
+	}, [cookies, navigate]);
 
 
 	return (

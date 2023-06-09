@@ -17,12 +17,15 @@ import {
     MDBCollapse,
 } from "mdb-react-ui-kit";
 import { useCookies } from "react-cookie";
+import CustomHook from "../Hooks/customHook";
+import axios from "axios";
 
 const HeaderComponent = () => {
 
     const [showBasic, setShowBasic] = useState(false);
 
     const [cookies, setCookie, removeCookie] = useCookies([]);
+    const { handleChange, inp, errors } = CustomHook({ role: "2" }, {});
     const navigate = useNavigate();
     // const [login, setlogin] = useState(cookies.username !== undefined, cookies.id !== undefined);
     const [login, setlogin] = useState(!!cookies.username, !!cookies.id);
@@ -39,12 +42,29 @@ const HeaderComponent = () => {
     ];
 
 
+    // const handleLogout = () => {
+    //     removeCookie("username"); // Remove username cookie
+    //     removeCookie("id"); // Remove ID cookie
+    //     console.log("seccessfully logged out");
+    //     setlogin(false);
+    //     navigate("/loginpage"); // Navigate to the home page or the desired page after logout
+    // };
+
+
+
     const handleLogout = () => {
-        removeCookie("username"); // Remove username cookie
-        removeCookie("id"); // Remove ID cookie
+
+        removeCookie('username', { path: '/' });
+        removeCookie("id"); // Remove id cookie
         console.log("seccessfully logged out");
-        setlogin(false);
-        navigate("/loginpage"); // Navigate to the home page or the desired page after logout
+        navigate("/loginpage")
+        // const store = axios.get(`http://localhost:5000/user?name=${inp.name}&id=${inp.id}`)
+        //     .then((res) => {
+
+        //     })
+        // removeCookie('username', { path: '/' });
+        // removeCookie("username"); // Remove username cookie
+        // removeCookie("id"); // Remove id cookie
     };
 
     const mapdata = data.map(({ path, name }, index) => {

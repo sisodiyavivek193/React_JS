@@ -1,12 +1,15 @@
+import axios from 'axios';
 import React, { useState } from 'react';
 import { useCookies } from 'react-cookie';
 import { Link, Outlet, useNavigate } from 'react-router-dom';
+import CustomHook from '../Hooks/customHook';
 
 const AdminMenu = () => {
 
 	const [add, setadd] = useState(false);
 	const navigate = useNavigate();
 	const [cookies, setCookie, removeCookie] = useCookies([]);
+	const { handleChange, inp, errors } = CustomHook({ role: "2" }, {});
 
 
 	const btnclick = () => {
@@ -17,9 +20,17 @@ const AdminMenu = () => {
 
 
 	const handleLogout = () => {
+
 		removeCookie('username', { path: '/' });
-		// removeCookie("username"); // Remove username cookie
 		removeCookie("id"); // Remove id cookie
+		navigate("/loginpage")
+
+		// const store = axios.get(`http://localhost:5000/user?name=${inp.name}&id=${inp.id}`)
+		// 	.then((res) => {
+		// 				})
+		// removeCookie('username', { path: '/' });
+		// removeCookie("username"); // Remove username cookie
+		// removeCookie("id"); // Remove id cookie
 	};
 	return (
 		<>
