@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
+import { useCookies } from 'react-cookie';
 import CustomHook from '../Hooks/customHook';
 import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
-import { useCookies } from 'react-cookie';
 
 const LoginPage = () => {
     const [username, setusername] = useState("");
@@ -50,12 +50,12 @@ const LoginPage = () => {
                         // setCookie('name', res.data[0].name);
                         // console.log("nandan");
                         // console.log(inp.name);4
-                        console.log("cookies", cookies.id);
+                        // console.log("cookies", cookies.id);
 
                         if (res.data.length > 0) {
                             // console.log("data", res.data);
                             // console.log("in", res.length.data[0].name);
-                            console.log("id", res.data[0].id);
+                            // console.log("id", res.data[0].id);
                             setCookie("username", res.data[0].name)
                             setCookie("id", res.data[0].id)
 
@@ -67,7 +67,7 @@ const LoginPage = () => {
                                 navigate("/admin/admindashbord")
                             } else {
                                 // navigate("/")
-                                navigate("/")
+                                navigate("/admin/admindashbord")
                             }
 
                         } else {

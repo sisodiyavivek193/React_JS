@@ -52,20 +52,20 @@ const HeaderComponent = () => {
 
 
 
-    const handleLogout = () => {
+    // const handleLogout = () => {
 
-        removeCookie('username', { path: '/' });
-        removeCookie("id"); // Remove id cookie
-        console.log("seccessfully logged out");
-        navigate("/loginpage")
-        // const store = axios.get(`http://localhost:5000/user?name=${inp.name}&id=${inp.id}`)
-        //     .then((res) => {
+    //     removeCookie('username', { path: '/' });
+    //     removeCookie("id"); // Remove id cookie
+    //     console.log("seccessfully logged out");
+    //     navigate("/loginpage")
+    //     // const store = axios.get(`http://localhost:5000/user?name=${inp.name}&id=${inp.id}`)
+    //     //     .then((res) => {
 
-        //     })
-        // removeCookie('username', { path: '/' });
-        // removeCookie("username"); // Remove username cookie
-        // removeCookie("id"); // Remove id cookie
-    };
+    //     //     })
+    //     // removeCookie('username', { path: '/' });
+    //     // removeCookie("username"); // Remove username cookie
+    //     // removeCookie("id"); // Remove id cookie
+    // };
 
     const mapdata = data.map(({ path, name }, index) => {
         return (
@@ -101,7 +101,7 @@ const HeaderComponent = () => {
 
 
 
-                            <MDBNavbarItem>
+                            {/* <MDBNavbarItem>
                                 {login ? (
                                     <button onClick={handleLogout} className="btn btn-primary">
                                         Logout
@@ -112,7 +112,7 @@ const HeaderComponent = () => {
                                     </button>
                                 )}
                             </MDBNavbarItem>
-
+ */}
 
 
 

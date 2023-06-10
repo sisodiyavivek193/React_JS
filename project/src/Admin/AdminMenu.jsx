@@ -1,28 +1,28 @@
 import axios from 'axios';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useCookies } from 'react-cookie';
-import { Link, Outlet, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import { Link, Outlet } from 'react-router-dom';
 import CustomHook from '../Hooks/customHook';
 
 const AdminMenu = () => {
 
 	const [add, setadd] = useState(false);
 	const navigate = useNavigate();
-	const [cookies, setCookie, removeCookie] = useCookies([]);
-	const { handleChange, inp, errors } = CustomHook({ role: "2" }, {});
+	const [cookies, setCookie, removeCookie] = useCookies(["username", "id"]);
+	// const { handleChange, inp, errors } = CustomHook({ name: "", id: "" }, {});
 
 
 	const btnclick = () => {
 		setadd(!add)
 		console.log("callad");
 	}
-
-
-
 	const handleLogout = () => {
+		console.log(removeCookie('username'));
+		// console.log("id", removeCookie("id"), "Remove Name");
 
-		removeCookie('username', { path: '/' });
-		removeCookie("id"); // Remove id cookie
+		// removeCookie('username', {});
+		// removeCookie("id", {}); // Remove id cookie
 		navigate("/loginpage")
 
 		// const store = axios.get(`http://localhost:5000/user?name=${inp.name}&id=${inp.id}`)
@@ -68,31 +68,3 @@ const AdminMenu = () => {
 };
 
 export default AdminMenu;
-
-
-
-
-
-
-// const btn = document.querySelector(".bar");
-// const navbar = document.getElementById("sidebar")
-// const main = document.getElementById('main');
-
-
-// btn.addEventListener("click", () => {
-// 	// console.log("hello");
-// 	navbar.classList.toggle("show");
-// 	main.classList.toggle("mainactive")
-
-// });
-
-
-// let chokdi = document.querySelector(".bar");
-// let way = document.querySelector(".fa-times");
-// chokdi.onclick = function () {
-// 	if (way.classList.contains("fa-times")) {
-// 		way.classList.replace("fa-times", "fa-bars");
-// 	} else {
-// 		way.classList.replace("fa-bars", "fa-times");
-// 	}
-// }
