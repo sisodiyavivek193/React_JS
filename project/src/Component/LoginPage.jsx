@@ -17,6 +17,8 @@ const LoginPage = () => {
     const navigate = useNavigate();
     const { handleChange, inp, errors } = CustomHook({ role: "2" }, {});
     const [ActiveClass, setActiveClass] = useState(false);
+    const [ShowPassword, setShowPassword] = useState(false);
+    const [ConformPassw, setConformPassw] = useState("");
     // console.log(handleChange, " vvvv");
     // console.log(inp, " inp");
     // console.log(errors, " errors");
@@ -59,6 +61,8 @@ const LoginPage = () => {
                             setCookie("username", res.data[0].name)
                             setCookie("id", res.data[0].id)
 
+                            localStorage.setItem("username", res.data[0].name)
+                            localStorage.setItem("id", res.data[0].id)
 
 
                             if (res.data[0].role == 1) {
@@ -101,6 +105,11 @@ const LoginPage = () => {
 
     const registration = (event) => {
         event.preventDefault();
+        // console.log(password, "sss");
+        if (password !== ConformPassw) {
+            alert("Paswwoed Do Not Match")
+            return;
+        }
         // console.log(inp);
         // console.log("save data", inp);
         // fetch("http://localhost/API/registration", {
@@ -117,6 +126,7 @@ const LoginPage = () => {
             setusername("");
             setemail("");
             setpassword("")
+            setConformPassw("")
             // username();
             // email();
 
@@ -127,7 +137,9 @@ const LoginPage = () => {
 
     }
 
-
+    const handalshow = () => {
+        setShowPassword(!ShowPassword)
+    }
 
     return (
         <>
@@ -160,8 +172,16 @@ const LoginPage = () => {
                                             <label className="label">
                                                 Password
                                             </label>
-                                            <input type="password" name='password' onBlur={handleChange} className="thisrequired" />
+                                            <input type={ShowPassword ? "text" : "Password"}
+                                                name='password'
+                                                onBlur={handleChange}
+                                                className="thisrequired" />
+                                            <input type="checkbox"
+                                                className='form-check-input'
+                                                checked={ShowPassword}
+                                                onChange={handalshow} />
                                         </div>
+
                                         {/* <div className="group">
                                     <input id="check" type="checkbox" className="check" />
                                     <label>
@@ -175,9 +195,6 @@ const LoginPage = () => {
                                         <div className="foot-lnk">
                                             <a href="#forgot">Forgot Password?</a>
                                         </div>
-
-
-
                                     </form>
 
 
@@ -201,6 +218,21 @@ const LoginPage = () => {
                                                 Password
                                             </label>
                                             <input type="password" value={password} onChange={(e) => setpassword(e.target.value)} name='password' onBlur={handleChange} className="thisrequired" data-type="password" />
+                                        </div>
+                                        <div className="group">
+                                            <label className="label">
+                                                Conform Password
+                                            </label>
+                                            <input type={ShowPassword ? "text" : "Password"}
+                                                value={ConformPassw}
+                                                onChange={(e) => setConformPassw(e.target.value)}
+                                                name='conformpassword'
+                                                onBlur={handleChange}
+                                                className="thisrequired" />
+
+                                            <input type="checkbox"
+                                                checked={ShowPassword}
+                                                onChange={handalshow} />
                                         </div>
                                         {/* <div className="group">
                                     <label htmlFor="pass" className="label">

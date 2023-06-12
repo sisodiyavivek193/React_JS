@@ -99,7 +99,9 @@ const HeaderComponent = () => {
                             {mapdata}
 
 
-
+                            <button className="btn btn-primary">
+                                <Link to="/loginpage" className="text-light">Login</Link>
+                            </button>
 
                             {/* <MDBNavbarItem>
                                 {login ? (

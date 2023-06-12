@@ -17,8 +17,12 @@ const AdminMenu = () => {
 		setadd(!add)
 		console.log("callad");
 	}
+	console.log(removeCookie, "cookies");
 	const handleLogout = () => {
-		console.log(removeCookie('username'));
+		localStorage.removeItem("username")
+		localStorage.removeItem("id")
+		// console.log(removeCookie('username'));
+		// console.log(removeCookie('id'));
 		// console.log("id", removeCookie("id"), "Remove Name");
 
 		// removeCookie('username', {});
