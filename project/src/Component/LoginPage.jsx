@@ -180,6 +180,7 @@ const LoginPage = () => {
                                                 className='form-check-input'
                                                 checked={ShowPassword}
                                                 onChange={handalshow} />
+                                            <label htmlFor="" className='form-check-label mt-1'>Show password</label>
                                         </div>
 
                                         {/* <div className="group">
@@ -196,7 +197,6 @@ const LoginPage = () => {
                                             <a href="#forgot">Forgot Password?</a>
                                         </div>
                                     </form>
-
 
 
                                     <form action="" method="post" className="sign-up-htm" onSubmit={registration} s>
@@ -233,6 +233,8 @@ const LoginPage = () => {
                                             <input type="checkbox"
                                                 checked={ShowPassword}
                                                 onChange={handalshow} />
+                                            <label htmlFor="" className='form-check-label mt-1'>Conform Password</label>
+
                                         </div>
                                         {/* <div className="group">
                                     <label htmlFor="pass" className="label">
