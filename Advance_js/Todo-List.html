@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+        }
+
+        #List {
+            margin: 20px;
+            text-align: center;
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="box">
+        <input type="text" name="" id="Input">
+        <button onclick="addTask()">Add Task</button>
+        <ol id="List"></ol>
+    </div>
+
+
+
+    <script>
+        var tasks = [];
+
+        function addTask() {
+            var inputElement = document.getElementById("Input");
+            var inpval = inputElement.value.trim();
+
+            console.log("🚀 ~ file: Todo.html:147 ~ addTask ~ inpval:", inpval);
+
+            if (inpval !== '') {
+                // Add the task to the array
+                tasks.push(inpval);
+                // Clear the input field
+                inputElement.value = '';
+                displayTasks();
+            }
+        }
+
+        function displayTasks() {
+            var list = document.getElementById("List");
+
+            console.log("displayTasks");
+
+            list.innerHTML = '';
+
+            for (let i = 0; i < tasks.length; i++) {
+                let taskWrapper = document.createElement('li'); // Wrapper element
+
+                let taskItem = document.createElement('span'); // Task text
+                taskItem.textContent = tasks[i];
+
+                let editButton = document.createElement('button'); // Edit button
+                editButton.textContent = 'Edit';
+                editButton.onclick = function () {
+                    toggleEdit(i, taskWrapper, taskItem);
+                };
+
+                let deleteButton = document.createElement('button'); // Delete button
+                deleteButton.textContent = 'Delete';
+                deleteButton.onclick = function () {
+                    deleteTask(i, taskWrapper);
+                };
+
+                taskWrapper.appendChild(taskItem);
+                taskWrapper.appendChild(editButton);
+                taskWrapper.appendChild(deleteButton);
+
+                list.appendChild(taskWrapper);
+            }
+        }
+
+        function toggleEdit(index, taskWrapper, taskItem) {
+            taskItem.style.display = 'none';
+
+            let editInput = document.createElement('input'); // New input field
+            editInput.type = 'text';
+            editInput.value = tasks[index];
+
+            editInput.oninput = function () {
+                // Handle input changes
+                console.log(editInput.value, "Edit input");
+                tasks[index] = editInput.value;
+            };
+
+
+            editInput.onblur = function () {
+                finishEdit(index, taskWrapper, taskItem, editInput);
+            };
+
+            taskWrapper.replaceChild(editInput, taskItem);
+        }
+
+        function finishEdit(index, taskWrapper, taskItem, editInput) {
+            taskItem.textContent = editInput.value;
+            taskItem.style.display = 'inline';
+            tasks[index] = editInput.value;
+
+            taskWrapper.replaceChild(taskItem, editInput);
+        }
+
+        function deleteTask(index, taskWrapper) {
+            tasks.splice(index, 1);
+            taskWrapper.remove(); // Remove the task wrapper element from the DOM
+        }
+
+
+    </script>
+
+</body>
+
+</html>
