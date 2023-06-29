@@ -1,0 +1,91 @@
+<script>
+    // let userObj = new Object("testing"); // "object constructor" syntax
+    // // let userObj = new Object({ "username": "data" }); // "object constructor" syntax
+    // console.log(userObj);
+    // console.log(userObj.username)
+
+    // let user = { "username": "data" };  // "object literal" syntax
+    // console.log(user);  // { "username": "data" }
+    // console.log(user.username, "object value");  //data
+
+    // data = "testing"
+    // html = "<li>" + data + "</li>"
+    // html = `<li>${data}</li>`  //templet litreles
+    // console.log(html)
+
+    // Square brackets in Object
+
+    // user["likes birds"] = true;
+    // // console.log(user."likes birds");
+    // console.log(user);
+    // // console.log(user["likes birds"]);
+
+    // delete user["likes birds"];
+
+    // // console.log(user);
+
+
+    // let fruit = prompt("Which fruit to buy?", "apple");
+    // let bag = {};
+
+    // take property name from the fruit variable
+    // bag[fruit] = 5;
+    // console.log(bag);
+    // console.log(bag.apple);
+
+    // let obj = {};
+    // obj.__proto__ = 5; // assign a number
+    // console.log(obj.__proto__); // [object Object] - the value is an object, didn't work as intended
+
+    // let userdataforin = { name: "John", age: 30 };
+
+    // console.log("age" in userdataforin); // true, user.age exists
+    // console.log("blabla" in userdataforin); // false, user.blabla doesn't exist
+
+
+    let userForLoop = {
+        name: "John",
+        age: 30,
+        isAdmin: true
+    };
+    // Object.entries(userForLoop).forEach((e) => {
+    //     console.log(e);
+    // });
+
+    // console.log(userForLoop, "userForLoop")
+    // Object.entries(userForLoop).forEach((key, i) => {
+    //     // console.log(e, "userForLoop inside forEach ")
+    //     // console.log(userForLoop, "userForLoop inside forEach ")
+    //     // console.log(key, "key inside forEach");
+    //     // console.log(i, "i inside forEach");
+    //     console.log(`key is:${key} , index is:${i}`);
+    // });
+    console.log(userForLoop)
+    // Object.entries(userForLoop).map((data) => {
+    // Object.entries(userForLoop).map(([key, i]) => {
+    // console.log(data, "inside map entries");
+    // console.log(`key is:${key} , index is:${i}`);
+    // })
+    // Object.values(userForLoop).map((data) => {
+    //     console.log(data, "inside map values");
+    // })
+
+    // Object.keys(userForLoop).map((data) => {
+    //     console.log(data, "inside map keys");
+    // })
+
+    // console.log(Array.from(userForLoop));
+    // Array.from(userForLoop).map((data)=>{
+    //     console.log(data);
+    // })
+    // console.log("for in");
+    for (const key in userForLoop) {
+        // console.log(userForLoop[key]);
+        console.log("Key is :", key, " and Value is ", userForLoop[key]);
+    }
+    for (const iterator of Object.entries(userForLoop)) {
+        // console.log(iterator, "iterator");
+        console.log(iterator[0]);
+        // console.log(iterator[1]);
+    }
+</script>
