@@ -1,0 +1,78 @@
+{
+  "posts": [],
+  "comments": [
+    {
+      "id": 26,
+      "name": "aaa",
+      "email": "aaa@mail.com",
+      "adderss": "aaa street"
+    },
+    {
+      "id": 33,
+      "name": "sss",
+      "email": "sss@mail.com",
+      "adderss": "sss street"
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "user": [
+    {
+      "role": "1",
+      "name": "admin",
+      "email": "admin@gmail.com",
+      "password": "admin",
+      "id": 1
+    },
+    {
+      "role": "2",
+      "name": "nandan",
+      "password": "aaaaaa",
+      "email": "gvslknb@dfqeh",
+      "id": 2
+    },
+    {
+      "role": "2",
+      "name": "user",
+      "email": "user@gmail.com",
+      "password": "user",
+      "id": 3
+    },
+    {
+      "role": "2",
+      "name": "test",
+      "email": "test@gmail.com",
+      "password": "2222",
+      "id": 4
+    },
+    {
+      "role": "2",
+      "name": "virat",
+      "email": "virat@gmail.com",
+      "password": "65464",
+      "id": 5
+    },
+    {
+      "role": "2",
+      "name": "anything",
+      "email": "anything@gmail.com",
+      "password": "4444",
+      "id": 7
+    },
+    {
+      "role": "2",
+      "email": "kkk@gmail.com",
+      "password": "kkkkk",
+      "name": "kkkkkk",
+      "id": 8
+    },
+    {
+      "role": "2",
+      "name": "aksh",
+      "email": "aksh@gmail.com",
+      "password": "464646",
+      "id": 9
+    }
+  ]
+}
